@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		FB3025B221F2494800C5DDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B121F2494800C5DDBD /* AppDelegate.swift */; };
-		FB3025B421F2494800C5DDBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B321F2494800C5DDBD /* ViewController.swift */; };
+		FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B321F2494800C5DDBD /* SplashVC.swift */; };
 		FB3025B721F2494800C5DDBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3025B521F2494800C5DDBD /* Main.storyboard */; };
 		FB3025BA21F2494800C5DDBD /* historicTeamz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B821F2494800C5DDBD /* historicTeamz.xcdatamodeld */; };
 		FB3025BC21F2494A00C5DDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3025BB21F2494A00C5DDBD /* Assets.xcassets */; };
 		FB3025BF21F2494A00C5DDBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3025BD21F2494A00C5DDBD /* LaunchScreen.storyboard */; };
 		FB3025CA21F2494A00C5DDBD /* historicTeamzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025C921F2494A00C5DDBD /* historicTeamzTests.swift */; };
 		FB3025D521F2494A00C5DDBD /* historicTeamzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025D421F2494A00C5DDBD /* historicTeamzUITests.swift */; };
+		FB3025EA21F287A700C5DDBD /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025E921F287A700C5DDBD /* RoundedButton.swift */; };
+		FBFBDC3821F5A9E900392539 /* SportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBDC3721F5A9E900392539 /* SportsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		FB3025AE21F2494800C5DDBD /* historicTeamz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = historicTeamz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3025B121F2494800C5DDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB3025B321F2494800C5DDBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB3025B321F2494800C5DDBD /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		FB3025B621F2494800C5DDBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB3025B921F2494800C5DDBD /* historicTeamz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = historicTeamz.xcdatamodel; sourceTree = "<group>"; };
 		FB3025BB21F2494A00C5DDBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		FB3025D021F2494A00C5DDBD /* historicTeamzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = historicTeamzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3025D421F2494A00C5DDBD /* historicTeamzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historicTeamzUITests.swift; sourceTree = "<group>"; };
 		FB3025D621F2494A00C5DDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB3025E921F287A700C5DDBD /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		FBFBDC3721F5A9E900392539 /* SportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,12 @@
 		FB3025B021F2494800C5DDBD /* historicTeamz */ = {
 			isa = PBXGroup;
 			children = (
+				FB3025E621F255B400C5DDBD /* Service */,
+				FB3025E521F255AC00C5DDBD /* Utilities */,
+				FB3025E421F255A800C5DDBD /* Model */,
+				FB3025E321F255A500C5DDBD /* View */,
+				FB3025E221F2559D00C5DDBD /* Controller */,
 				FB3025B121F2494800C5DDBD /* AppDelegate.swift */,
-				FB3025B321F2494800C5DDBD /* ViewController.swift */,
 				FB3025B521F2494800C5DDBD /* Main.storyboard */,
 				FB3025BB21F2494A00C5DDBD /* Assets.xcassets */,
 				FB3025BD21F2494A00C5DDBD /* LaunchScreen.storyboard */,
@@ -126,6 +134,44 @@
 				FB3025D621F2494A00C5DDBD /* Info.plist */,
 			);
 			path = historicTeamzUITests;
+			sourceTree = "<group>";
+		};
+		FB3025E221F2559D00C5DDBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB3025B321F2494800C5DDBD /* SplashVC.swift */,
+				FBFBDC3721F5A9E900392539 /* SportsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB3025E321F255A500C5DDBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB3025E921F287A700C5DDBD /* RoundedButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB3025E421F255A800C5DDBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB3025E521F255AC00C5DDBD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FB3025E621F255B400C5DDBD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB3025B421F2494800C5DDBD /* ViewController.swift in Sources */,
+				FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */,
 				FB3025B221F2494800C5DDBD /* AppDelegate.swift in Sources */,
+				FBFBDC3821F5A9E900392539 /* SportsVC.swift in Sources */,
 				FB3025BA21F2494800C5DDBD /* historicTeamz.xcdatamodeld in Sources */,
+				FB3025EA21F287A700C5DDBD /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
