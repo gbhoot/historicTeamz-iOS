@@ -54,7 +54,6 @@
         <!--SportsVC-->
         <scene sceneID="HfB-Sc-5fN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xNW-oM-njG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="njF-tQ-hfC" customClass="SportsVC" customModule="historicTeamz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uGC-W9-jw1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -75,7 +74,7 @@
                                             <action selector="sportsBtnPressed:" destination="njF-tQ-hfC" eventType="touchUpInside" id="vZ1-ir-y6g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-kf-YR2" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-kf-YR2" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="63" width="315" height="43"/>
                                         <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
@@ -87,7 +86,7 @@
                                             <action selector="sportsBtnPressed:" destination="njF-tQ-hfC" eventType="touchUpInside" id="765-t2-fR3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1B-HE-FgS" userLabel="Hockey Btn" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1B-HE-FgS" userLabel="Hockey Btn" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="126" width="315" height="43"/>
                                         <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
@@ -99,7 +98,7 @@
                                             <action selector="sportsBtnPressed:" destination="njF-tQ-hfC" eventType="touchUpInside" id="q0i-fs-rkI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iJ-Fn-cIR" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iJ-Fn-cIR" customClass="RoundedButton" customModule="historicTeamz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="189" width="315" height="43"/>
                                         <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
@@ -127,10 +126,120 @@
                         <outlet property="basketballBtn" destination="yGy-kf-YR2" id="XbS-NH-KSU"/>
                         <outlet property="footballBtn" destination="0ZB-Gi-yfa" id="QW1-Pp-Qsd"/>
                         <outlet property="hockeyBtn" destination="n1B-HE-FgS" id="evo-5Y-QAx"/>
+                        <segue destination="UDS-Bq-LS2" kind="presentation" identifier="toTeamListVC" id="TQm-HX-SOA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNW-oM-njG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="985" y="23"/>
+        </scene>
+        <!--Team ListVC-->
+        <scene sceneID="Ku6-MF-Y1V">
+            <objects>
+                <viewController id="UDS-Bq-LS2" customClass="TeamListVC" customModule="historicTeamz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6b8-t9-Vcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-Sx-1lm">
+                                <rect key="frame" x="157.33333333333334" y="64" width="60.333333333333343" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qzj-pN-yiS">
+                                <rect key="frame" x="20" y="115" width="335" height="29"/>
+                                <segments>
+                                    <segment title="Most Popular"/>
+                                    <segment title="All"/>
+                                </segments>
+                                <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gtu-Ls-si7">
+                                <rect key="frame" x="20" y="183" width="335" height="545"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="75" id="Wkf-Mu-h7c" customClass="TeamCell" customModule="historicTeamz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="335" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wkf-Mu-h7c" id="Thb-QH-SvV">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="74.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EEq-Zs-F0U">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="74.666666666666671"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-Lc-poJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="74.666666666666671"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bzp-Qa-UxV">
+                                                            <rect key="frame" x="115" y="0.0" width="105" height="74.666666666666671"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiI-2W-rF5">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="37.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEN-MB-YY6">
+                                                                    <rect key="frame" x="0.0" y="37.333333333333329" width="105" height="37.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="224" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-FH-gd6">
+                                                            <rect key="frame" x="230" y="0.0" width="105" height="74.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="EEq-Zs-F0U" firstAttribute="leading" secondItem="Thb-QH-SvV" secondAttribute="leading" id="9VJ-Pc-VPa"/>
+                                                <constraint firstItem="EEq-Zs-F0U" firstAttribute="top" secondItem="Thb-QH-SvV" secondAttribute="top" id="G0D-UG-m8x"/>
+                                                <constraint firstAttribute="bottom" secondItem="EEq-Zs-F0U" secondAttribute="bottom" id="aQn-Np-TcK"/>
+                                                <constraint firstAttribute="trailing" secondItem="EEq-Zs-F0U" secondAttribute="trailing" id="b2g-jM-aYP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="badgeImgView" destination="gF5-Lc-poJ" id="J5m-JP-eBL"/>
+                                            <outlet property="organizationLbl" destination="NiI-2W-rF5" id="gcI-FZ-13y"/>
+                                            <outlet property="seasonGameLbl" destination="eEN-MB-YY6" id="Uan-tA-Z4R"/>
+                                            <outlet property="viewsLbl" destination="Ir5-FH-gd6" id="jci-rh-hxz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="84e-9F-FUE" firstAttribute="trailing" secondItem="Qzj-pN-yiS" secondAttribute="trailing" constant="20" id="6KG-FR-he0"/>
+                            <constraint firstItem="gtu-Ls-si7" firstAttribute="leading" secondItem="Qzj-pN-yiS" secondAttribute="leading" id="EPS-jl-Z1P"/>
+                            <constraint firstItem="gtu-Ls-si7" firstAttribute="trailing" secondItem="Qzj-pN-yiS" secondAttribute="trailing" id="G2A-L7-gS2"/>
+                            <constraint firstItem="uGE-Sx-1lm" firstAttribute="centerX" secondItem="6b8-t9-Vcw" secondAttribute="centerX" id="Hi0-EV-asx"/>
+                            <constraint firstItem="Qzj-pN-yiS" firstAttribute="leading" secondItem="84e-9F-FUE" secondAttribute="leading" constant="20" id="IF0-6g-Xxz"/>
+                            <constraint firstItem="Qzj-pN-yiS" firstAttribute="top" secondItem="uGE-Sx-1lm" secondAttribute="bottom" constant="10" id="PBQ-PG-2bQ"/>
+                            <constraint firstItem="uGE-Sx-1lm" firstAttribute="top" secondItem="84e-9F-FUE" secondAttribute="top" constant="20" id="bmk-qi-eET"/>
+                            <constraint firstItem="gtu-Ls-si7" firstAttribute="top" secondItem="Qzj-pN-yiS" secondAttribute="bottom" constant="40" id="dae-4t-AfC"/>
+                            <constraint firstItem="84e-9F-FUE" firstAttribute="bottom" secondItem="gtu-Ls-si7" secondAttribute="bottom" constant="50" id="vxX-nN-kes"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="84e-9F-FUE"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmented" destination="Qzj-pN-yiS" id="quI-Uo-KLP"/>
+                        <outlet property="teamListTblView" destination="gtu-Ls-si7" id="Xwf-EW-hJM"/>
+                        <outlet property="titleLbl" destination="uGE-Sx-1lm" id="CUC-vU-WW5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="138-sC-AEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933.5999999999999" y="22.906403940886701"/>
         </scene>
     </scenes>
     <resources>
