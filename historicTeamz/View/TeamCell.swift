@@ -15,7 +15,10 @@ class TeamCell: UITableViewCell {
     @IBOutlet weak var organizationLbl: UILabel!
     @IBOutlet weak var seasonGameLbl: UILabel!
     @IBOutlet weak var viewsLbl: UILabel!
+    @IBOutlet weak var playBtn: UIButton!
     
+    // Varibles
+    var team_id: String?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +29,25 @@ class TeamCell: UITableViewCell {
     }
     
     // Functions
-    func configureCell(badgeLink: String, organization: String, season: Int, game: String, views: Int) {
+    func configureCell(badgeLink: String, organization: String, season: Int, game: String, views: Int, team_id: String) {
         self.badgeImgView.downloaded(from: badgeLink)
         organizationLbl.text = organization
         seasonGameLbl.text = "\(season)-\(season + 1) \(game)"
         viewsLbl.text = "\(views) views"
+        
+        self.team_id = team_id
+    }
+    
+    func enablePlayBtn(enable: Bool) {
+        if enable {
+            playBtn.isEnabled = true
+        } else {
+            playBtn.isEnabled = false
+        }
+    }
+    
+    // IB-Actions
+    @IBAction func playBtnPressed(_ sender: Any) {
+        
     }
 }

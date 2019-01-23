@@ -24,6 +24,7 @@ let ID_SEGUE_TO_TEAM_LIST           =   "toTeamListVC"
 
 // Cell Reuse IDs
 let ID_REUSE_TEAM_CELL              =   "teamCell"
+let ID_REUSE_CATEGORY_CELL          =   "categoryCell"
 
 // Functions
 func formURLAllOrganizations(for country: String) -> String {
