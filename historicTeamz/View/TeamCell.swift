@@ -34,20 +34,17 @@ class TeamCell: UITableViewCell {
         organizationLbl.text = organization
         seasonGameLbl.text = "\(season)-\(season + 1) \(game)"
         viewsLbl.text = "\(views) views"
-        
         self.team_id = team_id
     }
     
-    func enablePlayBtn(enable: Bool) {
-        if enable {
-            playBtn.isEnabled = true
-        } else {
-            playBtn.isEnabled = false
-        }
+    func changeInfoLabel(infoLblStr: String) {
+        self.seasonGameLbl.text = infoLblStr
     }
     
     // IB-Actions
     @IBAction func playBtnPressed(_ sender: Any) {
+        guard let ftid = team_id else { return }
+        print(ftid)
         
     }
 }

@@ -111,6 +111,8 @@ class TeamListVC: UIViewController {
         }
         
         self.selectedTeamIdx = -1
+        self.selectedCountryIdx = -1
+        self.selectedOrgIdx = -1
         self.teamListTblView.reloadData()
     }
 }
@@ -169,6 +171,12 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.configureCell(badgeLink: badgeLink, organization: organization, season: season, game: game, views: views, team_id: team_id)
+            if selectedTeamIdx == indexPath.row {
+                cell.playBtn.isHidden = false
+            } else {
+                cell.playBtn.isHidden = true
+            }
+
 
             return cell
         case .all:
@@ -202,6 +210,11 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
                 }
                 
                 cell.configureCell(badgeLink: badgeLink, organization: organization, season: season, game: game, views: views, team_id: team_id)
+                if selectedTeamIdx == indexPath.row {
+                    cell.playBtn.isHidden = false
+                } else {
+                    cell.playBtn.isHidden = true
+                }
 
                 return cell
             }
@@ -211,17 +224,25 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = categoryRowHeight
+        var height: CGFloat
         
-        let cell = tableView.cellForRow(at: indexPath)
-        print(cell)
-        
-        guard (tableView.cellForRow(at: indexPath) as? TeamCell) != nil else { return height }
-
-        if selectedTeamIdx == indexPath.row {
-            height = teamRowHeightSelected
-        } else {
-            height = teamRowHeight
+        switch state {
+        case .popular:
+            if selectedTeamIdx == indexPath.row {
+                height = teamRowHeightSelected
+            } else {
+                height = teamRowHeight
+            }
+        default:
+            if indexPath.section == 2 {
+                if selectedTeamIdx == indexPath.row {
+                    height = teamRowHeightSelected
+                } else {
+                    height = teamRowHeight
+                }
+            } else {
+                height = categoryRowHeight
+            }
         }
         
         return height
@@ -230,13 +251,8 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch state {
         case .popular:
-            if (self.selectedTeamIdx == indexPath.row) {
-                self.selectedTeamIdx = -1
-            } else {
-                self.selectedTeamIdx = indexPath.row
-            }
-            
-            self.teamListTblView.reloadData()
+            alterTeamCell(tableView: tableView, indexPath: indexPath)
+            break
         default:
             if indexPath.section == 0 {
                 selectedCountryIdx = indexPath.row
@@ -249,7 +265,22 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
                 guard let orgList = organizations else { return }
                 let org = orgList[indexPath.row]
                 self.downloadTeamsFromDB(org: org)
+            } else {
+                alterTeamCell(tableView: tableView, indexPath: indexPath)
             }
+            
+            break
+        }
+        
+        teamListTblView.reloadData()
+    }
+    
+    // Functions
+    func alterTeamCell(tableView: UITableView, indexPath: IndexPath) {
+        if (self.selectedTeamIdx == indexPath.row) {
+            self.selectedTeamIdx = -1
+        } else {
+            self.selectedTeamIdx = indexPath.row
         }
     }
 }

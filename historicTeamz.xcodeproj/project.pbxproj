@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB0700EA21F7C8B40047248E /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700E921F7C8B40047248E /* ListState.swift */; };
 		FB0700EC21F7CDE80047248E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700EB21F7CDE80047248E /* CategoryCell.swift */; };
+		FB0700EE21F8F43E0047248E /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700ED21F8F43E0047248E /* GameVC.swift */; };
 		FB3025B221F2494800C5DDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B121F2494800C5DDBD /* AppDelegate.swift */; };
 		FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B321F2494800C5DDBD /* SplashVC.swift */; };
 		FB3025B721F2494800C5DDBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3025B521F2494800C5DDBD /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		FB0700E921F7C8B40047248E /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		FB0700EB21F7CDE80047248E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		FB0700ED21F8F43E0047248E /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		FB3025AE21F2494800C5DDBD /* historicTeamz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = historicTeamz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3025B121F2494800C5DDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3025B321F2494800C5DDBD /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				FB3025B321F2494800C5DDBD /* SplashVC.swift */,
 				FBFBDC3721F5A9E900392539 /* SportsVC.swift */,
 				FB6B16F321F675C800C007AA /* TeamListVC.swift */,
+				FB0700ED21F8F43E0047248E /* GameVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				FB6B16FD21F6D0FC00C007AA /* TeamService.swift in Sources */,
 				FB0700EA21F7C8B40047248E /* ListState.swift in Sources */,
 				FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */,
+				FB0700EE21F8F43E0047248E /* GameVC.swift in Sources */,
 				FB3025B221F2494800C5DDBD /* AppDelegate.swift in Sources */,
 				FBFBDC3821F5A9E900392539 /* SportsVC.swift in Sources */,
 				FB3025BA21F2494800C5DDBD /* historicTeamz.xcdatamodeld in Sources */,
