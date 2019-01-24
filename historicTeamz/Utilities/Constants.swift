@@ -29,7 +29,8 @@ let ID_REUSE_TEAM_CELL              =   "teamCell"
 let ID_REUSE_CATEGORY_CELL          =   "categoryCell"
 
 // Images
-let IMG_PITCH                       =   "pitch-half"
+let IMG_PITCH_HALF                  =   "pitch-half"
+let IMG_PITCH_FULL                  =   "pitch"
 
 // Functions
 func formURLAllOrganizations(for country: String) -> String {
