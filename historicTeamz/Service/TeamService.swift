@@ -74,6 +74,39 @@ class TeamService {
         task.resume()
     }
     
+    func getSingleTeam(ftid: Any, completion: @escaping CompletionHandTeam) {
+        let team_id = "\(ftid)"
+        let urlTeam = BASE_URL_FUTBAL + team_id
+        let url = URL(string: urlTeam)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            guard let retrievedData = data else {
+                completion(false, NSDictionary())
+                return
+            }
+            do {
+                guard let jsonData = try JSONSerialization.jsonObject(with: retrievedData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary else {
+                    completion(false, NSDictionary())
+                    return
+                }
+                if let message = jsonData["message"] as? String {
+                    if message == "Success" {
+                        guard let team = jsonData["team"] as? NSDictionary else {
+                            completion(false, NSDictionary())
+                            return
+                        }
+                        completion(true, team)
+                    }
+                }
+            } catch {
+                print("Couldn't complete request: \(error.localizedDescription)")
+                completion(false, NSDictionary())
+            }
+        }
+        
+        task.resume()
+    }
+    
     func getAllTeams(for organization: String, completion: @escaping CompletionHandTeams) {
         let orgStr = organization.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let urlTeam = formURLAllTeams(for: orgStr!)

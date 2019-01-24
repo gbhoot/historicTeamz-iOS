@@ -11,6 +11,7 @@ import Foundation
 
 // Completion Handlers
 typealias CompletionHandStrings = (_ completion: Bool, _ strings: [String]) -> ()
+typealias CompletionHandTeam = (_ completion: Bool, _ teams: NSDictionary) -> ()
 typealias CompletionHandTeams = (_ completion: Bool, _ teams: [NSDictionary]) -> ()
 
 // Database
@@ -21,10 +22,14 @@ let ALL_TEAMS_BY_VIEWS              =   "views"
 
 // Storyboard Segue IDs
 let ID_SEGUE_TO_TEAM_LIST           =   "toTeamListVC"
+let ID_SEGUE_TO_GAME                =   "toGameVC"
 
 // Cell Reuse IDs
 let ID_REUSE_TEAM_CELL              =   "teamCell"
 let ID_REUSE_CATEGORY_CELL          =   "categoryCell"
+
+// Images
+let IMG_PITCH                       =   "pitch-half"
 
 // Functions
 func formURLAllOrganizations(for country: String) -> String {

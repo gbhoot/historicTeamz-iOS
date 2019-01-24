@@ -19,6 +19,7 @@ class TeamCell: UITableViewCell {
     
     // Varibles
     var team_id: String?
+    var delegate: TeamGameSelected?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +45,6 @@ class TeamCell: UITableViewCell {
     // IB-Actions
     @IBAction func playBtnPressed(_ sender: Any) {
         guard let ftid = team_id else { return }
-        print(ftid)
-        
+        delegate?.transitionToGame(for: ftid)
     }
 }

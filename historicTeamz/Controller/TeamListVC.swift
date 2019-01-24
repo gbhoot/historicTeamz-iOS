@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamListVC: UIViewController {
+class TeamListVC: UIViewController, TeamGameSelected {
     
     // IBOutlets
     @IBOutlet weak var titleLbl: UILabel!
@@ -27,6 +27,7 @@ class TeamListVC: UIViewController {
     var selectedCountryIdx: Int = -1
     var selectedOrgIdx: Int = -1
     var selectedTeamIdx: Int = -1
+    var selectedTeamID: String?
 
     // Constants
     let teamRowHeight: CGFloat = 100
@@ -92,6 +93,16 @@ class TeamListVC: UIViewController {
                 }
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? GameVC else { return }
+        destination.ftid = selectedTeamID
+    }
+    
+    func transitionToGame(for team_id: String) {
+        selectedTeamID = team_id
+        performSegue(withIdentifier: ID_SEGUE_TO_GAME, sender: self)
     }
     
     // IB-Actions
@@ -176,7 +187,7 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.playBtn.isHidden = true
             }
-
+            cell.delegate = self
 
             return cell
         case .all:
@@ -215,6 +226,7 @@ extension TeamListVC: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     cell.playBtn.isHidden = true
                 }
+                cell.delegate = self
 
                 return cell
             }

@@ -10,6 +10,9 @@
 		FB0700EA21F7C8B40047248E /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700E921F7C8B40047248E /* ListState.swift */; };
 		FB0700EC21F7CDE80047248E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700EB21F7CDE80047248E /* CategoryCell.swift */; };
 		FB0700EE21F8F43E0047248E /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700ED21F8F43E0047248E /* GameVC.swift */; };
+		FB0700F021F947BD0047248E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700EF21F947BD0047248E /* Team.swift */; };
+		FB0700F321F96BCF0047248E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700F221F96BCF0047248E /* Protocols.swift */; };
+		FB0700F521F971980047248E /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0700F421F971980047248E /* UIViewExt.swift */; };
 		FB3025B221F2494800C5DDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B121F2494800C5DDBD /* AppDelegate.swift */; };
 		FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3025B321F2494800C5DDBD /* SplashVC.swift */; };
 		FB3025B721F2494800C5DDBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3025B521F2494800C5DDBD /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		FB0700E921F7C8B40047248E /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		FB0700EB21F7CDE80047248E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FB0700ED21F8F43E0047248E /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		FB0700EF21F947BD0047248E /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		FB0700F221F96BCF0047248E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		FB0700F421F971980047248E /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		FB3025AE21F2494800C5DDBD /* historicTeamz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = historicTeamz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3025B121F2494800C5DDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3025B321F2494800C5DDBD /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 		FB3025E421F255A800C5DDBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB0700EF21F947BD0047248E /* Team.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				FB6B16F521F67DAD00C007AA /* Constants.swift */,
+				FB0700F221F96BCF0047248E /* Protocols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				FB6B16FA21F6C80C00C007AA /* UIImageViewExt.swift */,
+				FB0700F421F971980047248E /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,8 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0700F321F96BCF0047248E /* Protocols.swift in Sources */,
 				FB6B16F821F6B59000C007AA /* TeamCell.swift in Sources */,
 				FB6B16FB21F6C80C00C007AA /* UIImageViewExt.swift in Sources */,
+				FB0700F021F947BD0047248E /* Team.swift in Sources */,
+				FB0700F521F971980047248E /* UIViewExt.swift in Sources */,
 				FB6B16FD21F6D0FC00C007AA /* TeamService.swift in Sources */,
 				FB0700EA21F7C8B40047248E /* ListState.swift in Sources */,
 				FB3025B421F2494800C5DDBD /* SplashVC.swift in Sources */,
