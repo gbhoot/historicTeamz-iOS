@@ -16,10 +16,10 @@ struct Team {
     public private(set) var opposition: String!
     public private(set) var score: [Int]!
     public private(set) var home: Bool!
-    public private(set) var starters: NSDictionary!
-    public private(set) var bench: [NSDictionary]!
+    public private(set) var starters: NSMutableDictionary!
+    public private(set) var bench: [NSMutableDictionary]!
     
-    init(ftid: Any, game: String, season: Int, org: String, opposition: String, score: [Int], home: Bool, starters: NSDictionary, bench: [NSDictionary]) {
+    init(ftid: Any, game: String, season: Int, org: String, opposition: String, score: [Int], home: Bool, starters: NSMutableDictionary, bench: [NSMutableDictionary]) {
         self.ftid = ftid
         self.game = game
         self.season = season
