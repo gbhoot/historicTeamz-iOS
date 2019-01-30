@@ -39,10 +39,21 @@ class TeamListVC: UIViewController, TeamGameSelected {
 
         setupView()
         setupTable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         downloadDataFromDB()
+        resetView()
     }
     
     // Functions
+    func resetView() {
+        self.selectedTeamIdx = -1
+        self.selectedCountryIdx = -1
+        self.selectedOrgIdx = -1
+        self.teamListTblView.reloadData()
+    }
+    
     func setupView() {
         if let title = titleText {
             titleLbl.text = title
@@ -112,12 +123,14 @@ class TeamListVC: UIViewController, TeamGameSelected {
         switch idx {
         case 0:
             state = .popular
+            downloadDataFromDB()
             break
         case 1:
             state = .all
             break
         default:
             state = .popular
+            downloadDataFromDB()
             break
         }
         

@@ -168,5 +168,29 @@ class TeamService {
         task.resume()
     }
     
-    
+    func addView(for team_id: String, completion: @escaping CompletionHandler) {
+        let teamStr = formURLTeamView(for: team_id)
+        let urlStr = BASE_URL_FUTBAL + teamStr
+        let url = URL(string: urlStr)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            guard let retrievedData = data else {
+                completion(false)
+                return
+            }
+            do {
+                guard let jsonData = try JSONSerialization.jsonObject(with: retrievedData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary else { return }
+                if (jsonData["message"] as? String == "Success") {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            } catch {
+                print("Can't do get request: \(error.localizedDescription)")
+                completion(false)
+            }
+        }
+        
+        task.resume()
+    }
 }

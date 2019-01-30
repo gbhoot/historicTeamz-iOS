@@ -64,6 +64,7 @@ class GameVC: UIViewController {
 //        pitchView.bindToKeyboard()
         setupView()
         downloadTeamData()
+        addViewForGame()
     }
     
     // Functions
@@ -87,6 +88,21 @@ class GameVC: UIViewController {
                 DispatchQueue.main.async {
                     self.setupView()
                 }
+            }
+        }
+    }
+    
+    func addViewForGame() {
+        guard let team_id = ftid else {
+            print("Something went wrong")
+            return
+        }
+        
+        TeamService.instance.addView(for: team_id) { (success) in
+            if success {
+                print("Added view successfully")
+            } else {
+                print("Something went wrong")
             }
         }
     }

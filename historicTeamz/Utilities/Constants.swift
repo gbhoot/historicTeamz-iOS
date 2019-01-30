@@ -10,6 +10,7 @@ import Foundation
 
 
 // Completion Handlers
+typealias CompletionHandler = (_ completion: Bool) -> ()
 typealias CompletionHandStrings = (_ completion: Bool, _ strings: [String]) -> ()
 typealias CompletionHandTeam = (_ completion: Bool, _ teams: NSDictionary) -> ()
 typealias CompletionHandTeams = (_ completion: Bool, _ teams: [NSDictionary]) -> ()
@@ -39,6 +40,10 @@ func formURLAllOrganizations(for country: String) -> String {
 
 func formURLAllTeams(for organization: String) -> String {
     return ("organizations/" + organization + "/teams")
+}
+
+func formURLTeamView(for team_id: String) -> String {
+    return (team_id + "/addView")
 }
 
 // Defaults
