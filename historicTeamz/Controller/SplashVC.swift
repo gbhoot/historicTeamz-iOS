@@ -13,8 +13,12 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        GameCenterHelper.helper.viewController = self
     }
-
-
+    
+    @objc private func authenticationChanged(_ notification: Notification) {
+        print("User is authenticated: ", notification.object as? Bool ?? false)
+    }
 }
 

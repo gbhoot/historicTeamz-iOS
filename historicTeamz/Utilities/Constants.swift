@@ -14,6 +14,9 @@ typealias CompletionHandler = (_ completion: Bool) -> ()
 typealias CompletionHandStrings = (_ completion: Bool, _ strings: [String]) -> ()
 typealias CompletionHandTeam = (_ completion: Bool, _ teams: NSDictionary) -> ()
 typealias CompletionHandTeams = (_ completion: Bool, _ teams: [NSDictionary]) -> ()
+typealias CompletionBlock = (_ error: Error?) -> ()
+typealias CompletionBlockSt = (Error?) -> Void
+
 
 // Database
 let BASE_URL_FUTBAL                 =   "http://localhost:8000/db/v1/futbalTeams/"
